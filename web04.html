@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hsl(0, 0%, 96%);
+            background-image: url('https://media.npr.org/assets/img/2021/10/06/gettyimages-1302813215_wide-6c48e5a6aff547d2703693450c4805978de47435-s1100-c50.jpg');
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .seat-map {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .seat {
+            width: 50px;
+            height: 50px;
+            background-color: #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .seat.selected {
+            background-color: #6cb2eb;
+        }
+
+        .seat:not(.occupied):hover {
+            background-color: #b2d8ff;
+        }
+
+        .controls {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #455da0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Select your Comfort seats</h2>
+        <div class="seat-map">
+            
+        </div>
+        <div class="controls">
+            <button class="btn"><a href="web5.html">Confirm Seats</a></button>
+        </div>
+    </div>
+
+    <script>
+        function generateSeatLayout(rows, cols) {
+            const seatMap = document.querySelector('.seat-map');
+            for (let i = 0; i < rows; i++) {
+                for (let j = 0; j < cols; j++) {
+                    const seat = document.createElement('div');
+                    seat.classList.add('seat');
+                    seat.addEventListener('click', () => {
+                        seat.classList.toggle('selected');
+                    });
+                    seatMap.appendChild(seat);
+                }
+            }
+        }
+
+        
+        generateSeatLayout(10, 6);
+    </script>
+</body>
+</html>

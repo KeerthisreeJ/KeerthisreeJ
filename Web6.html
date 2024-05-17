@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: bold;
+            margin-top: 0;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="C:\Users\Administrator\Videos\Captures\4K UHD Flying Above Clouds Live Wallpaper - YouTube - Google Chrome 2024-04-26 20-08-03.mp4" type="video/mp4">
+            
+        </video>
+    </div>
+    <div class="container">
+        <h1>Thank you</h1>
+        <h3>Hope you had a comfortable booking</h3>
+        <p>Your Ticket will be sent your E-mail</p>
+        <p><a href="web.html">Booking page</a></p>
+    </div>
+</body>
+</html>

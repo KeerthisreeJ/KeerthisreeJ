@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking - Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .signup-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 400px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .signup-container h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .signup-container input[type="text"],
+        .signup-container input[type="password"],
+        .signup-container input[type="email"],
+        .signup-container input[type="tel"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .signup-container button {
+            width: calc(100% - 20px);
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .signup-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .signup-container .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signup-container .login-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .signup-container .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body style="background-image: url(https://static.vecteezy.com/system/resources/previews/003/781/534/non_2x/folding-paper-plane-flying-in-the-sky-with-clouds-seamless-pattern-a-small-white-plane-on-a-white-background-suitable-for-textiles-children-s-clothing-publications-wrapping-paper-free-vector.jpg);">
+    <div class="signup-container">
+        <h2>Create an Account</h2>
+        <form>
+            <input type="text" name="firstname" placeholder="First Name" required>
+            <br>
+            <input type="text" name="lastname" placeholder="Last Name" required>
+            
+            <br>
+            <input type="email" name="email" placeholder="Email" required>
+            <br>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <br>
+            <input type="password" name="password" placeholder="Password" required>
+            <br>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            <br>
+            <br>
+            <button type="submit"><a href="web00.html">Sign Up</a></button>
+        </form>
+        <div class="login-link">
+            Already have an account? <a href="web00.html">Login</a>
+        </div>
+    </div>
+</body>
+</html>

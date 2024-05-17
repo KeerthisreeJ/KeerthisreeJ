@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking</title>
+    <link rel="stylesheet" href="styless.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="Travelstyle.css">
+
+    <style>
+        
+        .booking__container {
+            border-radius: 2rem;
+            border: 1px solid var(--extra-light);
+            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+            max-width: 1250px;
+            max-height: 500px;
+            margin: auto;
+            background-color: white; 
+            padding: 2rem;
+        }
+        
+        .booking__nav {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .booking__nav .selected {
+            background-color: var(--primary-color);
+            color: var(--white);
+            transform: scale(1.7); 
+            transition: transform 0.5s ease-in-out; 
+
+        }
+        main {
+            padding-top: 200px; 
+        }
+
+
+
+        .booking__nav span {
+            flex: 1;
+            padding: 1rem 2rem;
+            font-weight: 500;
+            color: var(--text-light);
+            font-size: 1.6rem;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid var(--extra-light); 
+        }
+
+        .booking__nav span:nth-child(2) {
+            color: var(--white);
+            background-color: var(--primary-color);
+            border: 1px solid var(--primary-color); 
+        }
+
+        .booking__container form {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr) auto;
+            gap: 1rem;
+        }
+
+        .booking__container .input__content {
+            width: 100%;
+        }
+
+        .booking__container .form__group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .booking__container .form__group span {
+            padding: 10px;
+            font-size: 1.9rem;
+            color: var(--text-dark);
+            background-color: var(--text-light);
+            border-radius: 1rem;
+        }
+
+        .booking__container .input__group {
+            width: 100%;
+            position: relative;
+        }
+
+        .booking__container label {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            pointer-events: none;
+            transition: 0.3s;
+        }
+        .booking__container radio{
+            color:var(--text-dark);
+            position: relative;
+            font-size: 1.5rem;
+        }
+
+        .booking__container input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 1.2rem;
+            
+            outline: none;
+            border: none;
+            border-bottom: 1px solid var(--primary-color);
+            color: lightgray;
+            background-color: white; 
+        }
+
+        .booking__container input:focus ~ label {
+            font-size: 1rem;
+            top: 0;
+        }
+
+        .booking__container .form__group p {
+            margin-top: 0.5rem;
+            font-size: 1.0rem;
+            
+            color: var(--extra-light);
+        }
+
+        .booking__container .btn {
+            padding: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .booking-option {
+            font-size: 1rem;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: font-size 0.2s, color 0.2s;
+        }
+
+        .booking-option.selected {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .booking-option:hover {
+            font-size: 1.3rem;
+        }
+
+        .booking-option:focus {
+            outline: none; 
+        }
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        const bookingOptions = document.querySelectorAll('.booking-option');
+
+       
+    });
+
+    </script>
+    
+</head>
+<body style="background-image: url(https://www.kayak.com/news/wp-content/uploads/sites/19/2023/07/gettyimages-539327295.jpg); background-size: auto;">
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+
+        <a href="#" class="logo"><span>Flight</span></a>
+        
+        <nav class="navbar">
+            <a href="web.html">Book</a>
+            <a href="websh2.html">Schedule</a>
+            
+            
+            <a href="#buses">Home Page</a>
+            
+        </nav>
+        <div class="icons">
+            
+            <a href="web0.html" class="fas fa-user"></a>
+            
+
+        </div>
+    </header>
+    <main>
+        
+
+        <section class="section__container booking__container">
+            <div class="booking__nav">
+                <span class="booking-option" data-type="oneWay">One-way</span>
+                
+                <span class="booking-option" data-type="roundWay">Round-way</span>
+            </div>
+
+            <form>
+                <div class="form__group">
+                    <span><i class="ri-map-pin-line"></i></span>
+                    <div class="input__content">
+                        <div class="input__group">
+                            <select id="fromAirport" required>
+                                <option value="" disabled selected>Location</option>
+                                <option value="IXA">Agartala (IXA)</option>
+                                <option value="AGR">Agra (AGR)</option>
+                                <option value="AMD">Ahmedabad (AMD)</option>
+                                <option value="AJL">Aizawl (AJL)</option>
+                                <option value="ATQ">Amritsar (ATQ)</option>
+                                <option value="IXU">Aurangabad (IXU)</option>
+                                <option value="IXB">Bagdogra (IXB)</option>
+                                <option value="BEK">Bareilly (BEK)</option>
+                                <option value="IXG">Belagavi (IXG)</option>
+                                <option value="BLR">Bengaluru (BLR)</option>
+                                <option value="BHO">Bhopal (BHO)</option>
+                                <option value="BBI">Bhubaneswar (BBI)</option>
+                                <option value="IXC">Chandigarh (IXC)</option>
+                                <option value="MAA">Chennai (MAA)</option>
+                                <option value="CJB">Coimbatore (CJB)</option>
+                                <option value="DBR">Darbhanga (DBR)</option>
+                                <option value="DED">Dehradun (DED)</option>
+                                <option value="DEL">Delhi (DEL)</option>
+                                <option value="DGH">Deoghar (DGH)</option>
+                                <option value="DIB">Dibrugarh (DIB)</option>
+                                <option value="DMU">Dimapur (DMU)</option>
+                                <option value="RDP">Durgapur (RDP) NEW</option>
+                                <option value="GAY">Gaya (GAY)</option>
+                                <option value="GOI">Goa (GOI)</option>
+                                <option value="GOP">Gorakhpur (GOP)</option>
+                                <option value="GAU">Guwahati (GAU)</option>
+                                <option value="GWL">Gwalior (GWL)</option>
+                                <option value="HBX">Hubli (HBX)</option>
+                                <option value="HYD">Hyderabad (HYD)</option>
+                                <option value="IMF">Imphal (IMF)</option>
+                                <option value="IDR">Indore (IDR)</option>
+                                <option value="HGI">Itanagar (HGI)</option>
+                                <option value="JLR">Jabalpur (JLR)</option>
+                                <option value="JAI">Jaipur (JAI)</option>
+                                <option value="IXJ">Jammu (IXJ)</option>
+                                <option value="JDH">Jodhpur (JDH)</option>
+                                <option value="JRH">Jorhat (JRH)</option>
+                                <option value="CDP">Kadapa (CDP)</option>
+                                <option value="CNN">Kannur (CNN) NEW</option>
+                                <option value="KNU">Kanpur (KNU)</option>
+                                <option value="COK">Kochi (COK)</option>
+                                <option value="KLH">Kolhapur (KLH)</option>
+                                <option value="CCU">Kolkata (CCU)</option>
+                                <option value="CCJ">Kozhikode (CCJ)</option>
+                                <option value="KJB">Kurnool (KJB)</option>
+                                <option value="IXL">Leh (IXL)</option>
+                                <option value="LKO">Lucknow (LKO)</option>
+                                <option value="IXM">Madurai (IXM)</option>
+                                <option value="IXE">Mangaluru (IXE)</option>
+                                <option value="BOM">Mumbai (BOM)</option>
+                                <option value="MYQ">Mysuru (MYQ)</option>
+                                <option value="NAG">Nagpur (NAG)</option>
+                                <option value="GOX">North Goa (GOX) NEW</option>
+                                <option value="PGH">Pantnagar (PGH)</option>
+                                <option value="PAT">Patna (PAT)</option>
+                                <option value="IXZ">Port Blair (IXZ)</option>
+                                <option value="IXD">Prayagraj (IXD)</option>
+                                <option value="PNQ">Pune (PNQ)</option>
+                                <option value="RPR">Raipur (RPR)</option>
+                                <option value="RJA">Rajahmundry (RJA)</option>
+                                <option value="RAJ">Rajkot (RAJ)</option>
+                                <option value="IXR">Ranchi (IXR)</option>
+                                <option value="SHL">Shillong (SHL)</option>
+                                <option value="SAG">Shirdi (SAG)</option>
+                                <option value="IXS">Silchar (IXS)</option>
+                                <option value="SXR">Srinagar (SXR)</option>
+                                <option value="STV">Surat (STV)</option>
+                                <option value="TRV">Thiruvananthapuram (TRV)</option>
+                                <option value="TRZ">Tiruchirappalli (TRZ)</option>
+                                <option value="TIR">Tirupati (TIR)</option>
+                                <option value="TCR">Tuticorin (TCR)</option>
+                                <option value="UDR">Udaipur (UDR)</option>
+                                <option value="BDQ">Vadodara (BDQ)</option>
+                                <option value="VNS">Varanasi (VNS)</option>
+                                <option value="VGA">Vijayawada (VGA)</option>
+                                <option value="VTZ">Visakhapatnam (VTZ)</option>
+
+                               
+                            </select>
+                            <label for="fromAirport"></label>
+                        </div>
+                        <p>From</p>
+                    </div>
+                </div>
+                <div class="form__group">
+                    <span><i class="ri-map-pin-line"></i></span>
+                    <div class="input__content">
+                        <div class="input__group">
+                            <select id="toAirport" required>
+                                <option value="" disabled selected>Location</option>
+                                <option value="IXA">Agartala (IXA)</option>
+                                <option value="AGR">Agra (AGR)</option>
+                                <option value="AMD">Ahmedabad (AMD)</option>
+                                <option value="AJL">Aizawl (AJL)</option>
+                                <option value="ATQ">Amritsar (ATQ)</option>
+                                <option value="IXU">Aurangabad (IXU)</option>
+                                <option value="IXB">Bagdogra (IXB)</option>
+                                <option value="BEK">Bareilly (BEK)</option>
+                                <option value="IXG">Belagavi (IXG)</option>
+                                <option value="BLR">Bengaluru (BLR)</option>
+                                <option value="BHO">Bhopal (BHO)</option>
+                                <option value="BBI">Bhubaneswar (BBI)</option>
+                                <option value="IXC">Chandigarh (IXC)</option>
+                                <option value="MAA">Chennai (MAA)</option>
+                                <option value="CJB">Coimbatore (CJB)</option>
+                                <option value="DBR">Darbhanga (DBR)</option>
+                                <option value="DED">Dehradun (DED)</option>
+                                <option value="DEL">Delhi (DEL)</option>
+                                <option value="DGH">Deoghar (DGH)</option>
+                                <option value="DIB">Dibrugarh (DIB)</option>
+                                <option value="DMU">Dimapur (DMU)</option>
+                                <option value="RDP">Durgapur (RDP) NEW</option>
+                                <option value="GAY">Gaya (GAY)</option>
+                                <option value="GOI">Goa (GOI)</option>
+                                <option value="GOP">Gorakhpur (GOP)</option>
+                                <option value="GAU">Guwahati (GAU)</option>
+                                <option value="GWL">Gwalior (GWL)</option>
+                                <option value="HBX">Hubli (HBX)</option>
+                                <option value="HYD">Hyderabad (HYD)</option>
+                                <option value="IMF">Imphal (IMF)</option>
+                                <option value="IDR">Indore (IDR)</option>
+                                <option value="HGI">Itanagar (HGI)</option>
+                                <option value="JLR">Jabalpur (JLR)</option>
+                                <option value="JAI">Jaipur (JAI)</option>
+                                <option value="IXJ">Jammu (IXJ)</option>
+                                <option value="JDH">Jodhpur (JDH)</option>
+                                <option value="JRH">Jorhat (JRH)</option>
+                                <option value="CDP">Kadapa (CDP)</option>
+                                <option value="CNN">Kannur (CNN) NEW</option>
+                                <option value="KNU">Kanpur (KNU)</option>
+                                <option value="COK">Kochi (COK)</option>
+                                <option value="KLH">Kolhapur (KLH)</option>
+                                <option value="CCU">Kolkata (CCU)</option>
+                                <option value="CCJ">Kozhikode (CCJ)</option>
+                                <option value="KJB">Kurnool (KJB)</option>
+                                <option value="IXL">Leh (IXL)</option>
+                                <option value="LKO">Lucknow (LKO)</option>
+                                <option value="IXM">Madurai (IXM)</option>
+                                <option value="IXE">Mangaluru (IXE)</option>
+                                <option value="BOM">Mumbai (BOM)</option>
+                                <option value="MYQ">Mysuru (MYQ)</option>
+                                <option value="NAG">Nagpur (NAG)</option>
+                                <option value="GOX">North Goa (GOX) NEW</option>
+                                <option value="PGH">Pantnagar (PGH)</option>
+                                <option value="PAT">Patna (PAT)</option>
+                                <option value="IXZ">Port Blair (IXZ)</option>
+                                <option value="IXD">Prayagraj (IXD)</option>
+                                <option value="PNQ">Pune (PNQ)</option>
+                                <option value="RPR">Raipur (RPR)</option>
+                                <option value="RJA">Rajahmundry (RJA)</option>
+                                <option value="RAJ">Rajkot (RAJ)</option>
+                                <option value="IXR">Ranchi (IXR)</option>
+                                <option value="SHL">Shillong (SHL)</option>
+                                <option value="SAG">Shirdi (SAG)</option>
+                                <option value="IXS">Silchar (IXS)</option>
+                                <option value="SXR">Srinagar (SXR)</option>
+                                <option value="STV">Surat (STV)</option>
+                                <option value="TRV">Thiruvananthapuram (TRV)</option>
+                                <option value="TRZ">Tiruchirappalli (TRZ)</option>
+                                <option value="TIR">Tirupati (TIR)</option>
+                                <option value="TCR">Tuticorin (TCR)</option>
+                                <option value="UDR">Udaipur (UDR)</option>
+                                <option value="BDQ">Vadodara (BDQ)</option>
+                                <option value="VNS">Varanasi (VNS)</option>
+                                <option value="VGA">Vijayawada (VGA)</option>
+                                <option value="VTZ">Visakhapatnam (VTZ)</option>
+
+                            </select>
+                            <label for="toAirport"></label>
+                        </div>
+                        <p>To</p>
+                    </div>
+                </div>
+                <div class="form__group">
+                    <span><i class="ri-user-3-line"></i></span>
+                    <div class="input__content">
+                        <div class="input__group">
+                            <input type="number" id="travellers" required>
+                            <label for="travellers">Travellers</label>
+                        </div>
+                        <p>Add Guests</p>
+                    </div>
+                </div>
+                <div class="form__group">
+                    <span><i class="ri-calendar-line"></i></span>
+                    <div class="input__content">
+                        <div class="input__group">
+                            <input type="date" id="departure" required>
+                            <label for="departure">Departure</label>
+                        </div>
+                        <p>Add Date</p>
+                    </div>
+                </div>
+                <div class="form__group return-date" style="display: none;">
+                    
+                    <span><i class="ri-calendar-line"></i></span>
+                    <div class="input__content">
+                        <div class="input__group">
+                            <input type="date" id="return" required>
+                            <label for="return">Return</label>
+                        </div>
+                        <p>Add Date</p>
+                    </div>
+                </div>
+                
+                <button class="btn" type="button"><a href="web2.html"><i class="ri-search-line"></i></a></button>
+
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Flight Booking. All rights reserved.</p>
+  
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const bookingOptions = document.querySelectorAll('.booking-option');
+            const returnDateField = document.querySelector('.return-date');
+
+            bookingOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const tripType = option.getAttribute('data-type');
+                    if (tripType === 'oneWay') {
+                        
+                        returnDateField.style.display = 'none';
+                    } else if (tripType === 'roundWay') {
+                        
+                        returnDateField.style.display = 'flex';
+                    }
+                });
+            });
+        });
+        
+    </script>
+</body>
+</html>

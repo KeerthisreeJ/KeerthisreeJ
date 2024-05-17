@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Search Results</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #badded;
+            padding: 20px;
+        }
+        .flight-card {
+            background-color: #f2f3f2;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+           
+            max-width: 600px; 
+            max-height: 700px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .flight-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .flight-time {
+            font-weight: bold;
+        }
+
+        .flight-duration {
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .flight-price {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            flex: 1;
+        }
+        .flight-card {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .flight-icon {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: all 1.5s ease-in-out;
+            z-index: 999;
+            font-size: 45px;
+            
+        }
+
+    </style>
+    
+</head>
+<body>
+    <center>
+        
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 10:00</div>
+            <div class="flight-duration">6h 30m</div>
+        </div>
+        <div class="flight-price">₹5600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 13:30</div>
+        </div>
+    </div>
+   
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 5:00</div>
+            <div class="flight-duration">5h 30m</div>
+        </div>
+        <div class="flight-price">₹5600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 10:30</div>
+        </div>
+    </div>
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 17:00</div>
+            <div class="flight-duration">7h 30m</div>
+        </div>
+        <div class="flight-price">₹7600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 00:30</div>
+        </div>
+    </div>
+        
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 10:00</div>
+            <div class="flight-duration">6h 30m</div>
+        </div>
+        <div class="flight-price">₹5600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 13:30</div>
+        </div>
+    </div>
+   
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 5:00</div>
+            <div class="flight-duration">5h 30m</div>
+        </div>
+        <div class="flight-price">₹5600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 10:30</div>
+        </div>
+    </div>
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 17:00</div>
+            <div class="flight-duration">7h 30m</div>
+        </div>
+        <div class="flight-price">₹7600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 00:30</div>
+        </div>
+    </div>    
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 10:00</div>
+            <div class="flight-duration">6h 30m</div>
+        </div>
+        <div class="flight-price">₹5600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 13:30</div>
+        </div>
+    </div>
+   
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 5:00</div>
+            <div class="flight-duration">5h 30m</div>
+        </div>
+        <div class="flight-price">₹5600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 10:30</div>
+        </div>
+    </div>
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 17:00</div>
+            <div class="flight-duration">7h 30m</div>
+        </div>
+        <div class="flight-price">₹7600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 00:30</div>
+        </div>
+    </div>    
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 10:00</div>
+            <div class="flight-duration">6h 30m</div>
+        </div>
+        <div class="flight-price">₹5600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 13:30</div>
+        </div>
+    </div>
+   
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 5:00</div>
+            <div class="flight-duration">5h 30m</div>
+        </div>
+        <div class="flight-price">₹5600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 10:30</div>
+        </div>
+    </div>
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 17:00</div>
+            <div class="flight-duration">7h 30m</div>
+        </div>
+        <div class="flight-price">₹7600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 00:30</div>
+        </div>
+    </div>    
+    
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 17:00</div>
+            <div class="flight-duration">7h 30m</div>
+        </div>
+        <div class="flight-price">₹7600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 00:30</div>
+        </div>
+    </div>    
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 10:00</div>
+            <div class="flight-duration">6h 30m</div>
+        </div>
+        <div class="flight-price">₹5600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 13:30</div>
+        </div>
+    </div>
+   
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 5:00</div>
+            <div class="flight-duration">5h 30m</div>
+        </div>
+        <div class="flight-price">₹5600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 10:30</div>
+        </div>
+    </div>
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 17:00</div>
+            <div class="flight-duration">7h 30m</div>
+        </div>
+        <div class="flight-price">₹7600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 00:30</div>
+        </div>
+    </div>    
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 10:00</div>
+            <div class="flight-duration">6h 30m</div>
+        </div>
+        <div class="flight-price">₹5600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 13:30</div>
+        </div>
+    </div>
+   
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 5:00</div>
+            <div class="flight-duration">5h 30m</div>
+        </div>
+        <div class="flight-price">₹5600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 10:30</div>
+        </div>
+    </div>
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 17:00</div>
+            <div class="flight-duration">7h 30m</div>
+        </div>
+        <div class="flight-price">₹7600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 00:30</div>
+        </div>
+    </div>    
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 10:00</div>
+            <div class="flight-duration">6h 30m</div>
+        </div>
+        <div class="flight-price">₹5600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 13:30</div>
+        </div>
+    </div>
+   
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 5:00</div>
+            <div class="flight-duration">5h 30m</div>
+        </div>
+        <div class="flight-price">₹5600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 10:30</div>
+        </div>
+    </div>
+    <div class="flight-card" onclick="navigateToPassengerDetails(this)">
+        <div class="flight-details">
+            <div class="flight-time">Departure: 17:00</div>
+            <div class="flight-duration">7h 30m</div>
+        </div>
+        <div class="flight-price">₹7600/-</div>
+        <div class="flight-details">
+            <div class="flight-time">Arrival: 00:30</div>
+        </div>
+    </div>
+    
+    </center>
+    <script>
+        
+        function navigateToPassengerDetails(element) {
+            
+            window.location.href = "web3.html";
+        }
+    </script>
+
+</body>
+</html>

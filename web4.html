@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Order Book</title>
+    
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            opacity: 0.5;
+        }
+        
+        main {
+            padding: 20px;
+            background-color: powderblue;
+            background-size: cover;
+        }
+
+        .menu-item {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .menu-section {
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .menu-item {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            transform: scale(1.02);
+        }
+
+        #checkout-section {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #checkout-total {
+            font-weight: bold;
+        }
+
+        #checkout-button {
+            padding: 10px 20px;
+            background-color: #0e8712;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            height: 70px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Flight Order Book</h1>
+        <h4>When checked Out the payment will directly be added to overall payment </h4>
+    </header>
+    <main>
+        <button style="background-color: rgb(183, 183, 217); color: #f9f9f9;"><a href="web3.html"><h2><b>Go back</b></h2></a></button>
+        <section class="menu-section" id="Snack-section">
+            <h1>Classics</h1>
+            <div class="menu-item" id="Veg-Noodles">
+                <h3>Veg Noodles</h3>
+                <p>Hot steamy delicious Noodles just 4 mins a way </p>
+                <p>₹400/$5</p>
+            </div>
+            <div class="menu-item" id="Chicken-Noodles">
+                <h3>Chicken Noodles</h3>
+                <p>Hot steamy delicious Chicken Noodles just 4 mins a way </p>
+                <p>₹400/$5</p>
+            </div>
+            <h1>Choices of the day</h1>
+            <div class="menu-item" id="Cucumber-Tomato-Cheese-Sandwich">
+                <h3>Cucumber Tomato Cheese and Lettuce Sandwich</h3>
+                <p>Fresh and healthy snacks, made with organic veggies, that will make your day</p>
+                <p>₹400/$5</p>
+            </div>
+            <div class="menu-item" id="Chicken-Junglee-Sandwich">
+                <h3>Chicken Junglee Sandwich + beverage</h3>
+                <p>Fresh Sandwich, made with Organic veggies and marinated Chicken, that will make your mouth water </p>
+                <p>₹400/$5</p>
+            </div>
+            <br>
+            <h1>Beverages</h1>
+            <div class="menu-item" id="Aerated-Soft-Drink">
+                <h3>Aerated Soft-Drink(Cola,sprite)</h3>
+                <p>Icy cold, Refreshing</p>
+                <p>₹200/$3</p>
+            </div>
+            <div class="menu-item" id="Coke-Zero-Sugar">
+                <h3>Aerated Soft-Drink(Coke Zero-Sugar)</h3>
+                <p>Cold-refreshing, with Zero-Sugar </p>
+                <p>₹200/$3</p>
+            </div>
+            <div class="menu-item" id="Masala-Tea">
+                <h3>Masala Tea</h3>
+                <p>Hot steamy Tea, with taste full of spices, makes you calm and refreshed</p>
+                <p>₹200/$3</p>
+            </div>
+            <div class="menu-item" id="Cappuccino">
+                <h3>Cappuccino</h3>
+                <p>The perfect balance of espresso, steamed milk and foam </p>
+                <p>₹200/$3</p>
+            </div>
+            <div class="menu-item" id="Black-Tea-Darjeeling">
+                <h3>Black tea (Darjeeling)</h3>
+                <p>Healthy and refreshing</p>
+                <p>₹200/$3</p>
+            </div>
+            <div class="menu-item" id="Black-Coffee-No-Sugar">
+                <h3>Black Coffee(No-Sugar)</h3>
+                <p>The perfect Coffee to be Calm (tip: It cures Headache)</p>
+                <p>₹200/$3</p>
+            </div>
+        </section>
+
+        <section class="menu-section" id="breakfast-section">
+            <h1 style="background-color: #f9f9f9; opacity: 0.8;">South Indian Breakfast</h1>
+            <div class="menu-item" id="idli">
+                <h3>Idli</h3>
+                <p>Steamed rice cakes served with sambar and coconut chutney.</p>
+                <p>₹100</p>
+            </div>
+            <div class="menu-item" id="dosa">
+                <h3>Dosa</h3>
+                <p>Thin, crispy rice and lentil crepes served with sambar and chutney.</p>
+                <p>₹120</p>
+            </div>
+            <div class="menu-item" id="wada">
+                <h3>Medu Wada</h3>
+                <p>Deep-fried lentil donuts served with sambar and chutney.</p>
+                <p>₹110</p>
+            </div>
+            <div class="menu-item" id="Pongal">
+                <h3>Pongal</h3>
+                <p>Traditional South Indian rice and lentil porridge served with sambar and chutney.</p>
+                <p>₹110</p>
+            </div>
+        </section>
+        
+        <section class="menu-section" id="lunch-dinner-section">
+            <h1 style="background-color: #f9f9f9; opacity: 0.8;">South Indian Lunch and Dinner</h1>
+            <div class="menu-item" id="tamarind-rice">
+                <h3>Tamarind Rice</h3>
+                <p>A tangy rice dish made with channa and urad dal, infused with the flavor of tamarind pulp.</p>
+                <p>₹200</p>
+            </div>
+        </section>
+
+        <section id="checkout-section">
+            <h2>Total Cost: <span id="checkout-total">₹0</span></h2>
+            
+            <button id="checkout-button"><a href="web04.html">Checkout</a></button>
+
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Flight Booking. All rights reserved.</p>
+        <p>The Breakfast and the Lunch/Dinner item are only Available on Selected Flights</p>
+  
+
+    <script>
+        var totalCost = 0;
+
+        
+        function handleItemClick(itemName, itemPrice) {
+            
+            var existingCheckoutBar = document.querySelector("#" + itemName + " .checkout-bar");
+            if (existingCheckoutBar) {
+                return; 
+            }
+    
+            
+            var checkoutBar = document.createElement("div");
+            checkoutBar.classList.add("checkout-bar");
+    
+            var quantityInput = document.createElement("input");
+            quantityInput.setAttribute("type", "number");
+            quantityInput.setAttribute("placeholder", "Quantity");
+            quantityInput.setAttribute("min", "0");
+            quantityInput.setAttribute("value", "0");
+    
+            var totalPrice = document.createElement("p");
+            totalPrice.textContent = " ";
+    
+            checkoutBar.appendChild(quantityInput);
+            checkoutBar.appendChild(totalPrice);
+    
+           
+            var itemElement = document.getElementById(itemName);
+            itemElement.appendChild(checkoutBar);
+    
+           
+            quantityInput.addEventListener("input", function() {
+                updateTotal(itemPrice, this.value);
+            });
+        }
+    
+        
+        function updateTotal(itemPrice, quantity) {
+            var total = Number(itemPrice) * Number(quantity);
+            totalCost += total;
+            document.getElementById("checkout-total").textContent = "₹" + totalCost;
+        }
+    
+        document.getElementById("Veg-Noodles").addEventListener("click", function() {
+            handleItemClick("Veg-Noodles", 400);
+        });
+        document.getElementById("Chicken-Noodles").addEventListener("click", function() {
+            handleItemClick("Chicken-Noodles", 400);
+        });
+        document.getElementById("Cucumber-Tomato-Cheese-Sandwich").addEventListener("click", function() {
+            handleItemClick("Cucumber-Tomato-Cheese-Sandwich", 400);
+        });
+        document.getElementById("Chicken-Junglee-Sandwich").addEventListener("click", function() {
+            handleItemClick("Chicken-Junglee-Sandwich", 400);
+        });
+        document.getElementById("Aerated-Soft-Drink").addEventListener("click", function() {
+            handleItemClick("Aerated-Soft-Drink", 200);
+        });
+        document.getElementById("Coke-Zero-Sugar").addEventListener("click", function() {
+            handleItemClick("Coke-Zero-Sugar", 200);
+        });
+        document.getElementById("Masala-Tea").addEventListener("click", function() {
+            handleItemClick("Masala-Tea", 200);
+        });
+        document.getElementById("Cappuccino").addEventListener("click", function() {
+            handleItemClick("Cappuccino", 200);
+        });
+        document.getElementById("Black-Tea-Darjeeling").addEventListener("click", function() {
+            handleItemClick("Black-Tea-Darjeeling", 200);
+        });
+        document.getElementById("Black-Coffee-No-Sugar").addEventListener("click", function() {
+            handleItemClick("Black-Coffee-No-Sugar", 200);
+        });
+        document.getElementById("idli").addEventListener("click", function() {
+            handleItemClick("idli", 100);
+        });
+        document.getElementById("dosa").addEventListener("click", function() {
+            handleItemClick("dosa", 120);
+        });
+        document.getElementById("wada").addEventListener("click", function() {
+            handleItemClick("wada", 110);
+        });
+        document.getElementById("Pongal").addEventListener("click", function() {
+            handleItemClick("Pongal", 120);
+        });
+    
+        document.getElementById("tamarind-rice").addEventListener("click", function() {
+            handleItemClick("tamarind-rice", 200);
+        });
+
+
+        
+        document.getElementById("checkout-button").addEventListener("click", function() {
+            
+            alert("Total cost: ₹" + totalCost);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+main {
+    padding: 20px;
+}
+
+.search-form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-form label {
+    margin-right: 10px;
+}
+
+.search-form input {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.search-form button {
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#flights-list {
+    /* Styles for flight results */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.search-form button:hover {
+    background-color: #0056b3;
+}
+
+
+.slide-in {
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+header {
+    background-color: #4CAF50; 
+}
+
+.search-form button {
+    background-color: #008CBA; 
+}
+
+.search-form button:hover {
+    background-color: #0056b3; 
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.panel {
+    background-color: #f9f9f9; 
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    display: none; 
+    overflow-y: auto;
+}
+
+
+.filter-options {
+    margin-bottom: 20px;
+}
+
+.filter-options label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333; 
+}
+
+.filter-options input {
+    padding: 5px;
+    width: 100%;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+}
+
+
+.slide-in {
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+.booking__container{
+    border-radius:2rem ;
+    border:1px solid var(--extra-light);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
+}
+
+.booking__nav{
+    max-width: 600px;
+    margin:auto;
+    display: flex;
+    align-items: center;
+    background-color: var(--extra-light);
+    border-radius: 5px;
+}
+
+.booking__nav span{
+    flex:1;
+    padding:  1rem 2rem;
+    font-weight: 500;
+    color: var(--text-light);
+    text-align: center;
+    border-radius: 5px;
+    cursor:pointer;
+
+}
+.booking__nav span:nth-child(2){
+    color: var(--white);
+    background-color:var(--primary-color);
+}
+
+.booking__container form{
+    margin-top: 4rem;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr) auto;
+    gap:1rem;
+}
+.booking__container .input__content{
+    width:100%;
+}
+
+.booking__container .form__group{
+    display:flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.booking__container .form__group span{
+    padding: 10px;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    background-color: var(--text-light); 
+    border-radius: 1rem;
+}
+
+.booking__container .input__group{
+    width: 100%;
+    position: relative;
+
+}
+.booking__container label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.booking__container input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    color:var(--text-dark);
+
+}
+.booking__container input:focus ~ label{
+    font-size: 0.8rem;
+    top: 0;
+}
+
+.booking__container .form__group p{
+    margin-top: 0.5rem;
+    font-size: .8rem;
+    color:var(--extra-light);
+}
+
+.booking__container .btn {
+    padding: 1rem;
+    font-size: 1.5rem;
+}

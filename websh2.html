@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Status</title>
+    <link rel="stylesheet" href="web4search.css">
+        
+    <style>
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+        
+
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            width: auto;
+            height: 400px;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 16px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: max-content;
+            background-color: auto;
+            opacity: 0.9;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        hr {
+            margin-top: 20px;
+            border: none;
+            border-top: 2px solid #ccc;
+        }
+
+        #searchResult {
+            display: none;
+        }
+
+        .result-container {
+            margin-top: 30px;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: 1000; 
+            transition: background-color 0.3s ease; 
+        }
+
+        header.nav-scroll {
+            background-color: rgba(255, 255, 255, 0.9); 
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin-right: 20px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease; 
+        }
+
+        header nav ul li a:hover {
+            color: #555; 
+        }
+    </style>
+    <script>
+    function onFlightTypeChange() {
+        var known = document.getElementById("known").checked;
+        toggleVisibility("flightNumberLabel", known);
+        toggleVisibility("airlineLabel", known);
+        toggleVisibility("fromCityLabel", !known);
+        toggleVisibility("toCityLabel", !known);
+    
+        toggleVisibility("flightNumber", known);
+        toggleVisibility("airline", known);
+        toggleVisibility("fromCity", !known);
+        toggleVisibility("toCity", !known);
+    }
+    
+    function searchFlight() {
+        var fromCity = document.getElementById("fromCity").value;
+        var toCity = document.getElementById("toCity").value;
+        var timing = document.getElementById("timing").value;
+        var flightNumber = document.getElementById("flightNumber").value;
+        var airline = document.getElementById("airline").value;
+    
+        var searchResult = flightNumber ? "Flight status for " + flightNumber + " - " + airline : "Flight status from " + fromCity + " International Airport to " + toCity + " International Airport at " + timing;
+        searchResult += flightNumber ? " - Departure: " + getRealTimeDeparture() : "";
+    
+        document.getElementById("searchResult").innerText = searchResult;
+        toggleVisibility("searchResult", true);
+    
+        var prefix = flightNumber ? flightNumber + " - " + airline : "IG 432 - Indigo";
+        document.getElementById("airlineValue").innerText = prefix;
+        document.getElementById("routeValue").innerText = fromCity + " - " + toCity;
+        document.getElementById("departureAirportValue").innerText = fromCity + " International Airport";
+        document.getElementById("arrivalAirportValue").innerText =  toCity + " International Airport";
+    
+        var isDeparted = isFlightDeparted();
+        document.getElementById("departureStatus").innerText = isDeparted ? "Departed" : "Not Departed";
+        document.getElementById("departureStatus").classList.toggle("status", isDeparted);
+    }
+    
+    function toggleVisibility(elementId, show) {
+        document.getElementById(elementId).style.display = show ? "block" : "none";
+    }
+    
+    function getRealTimeDeparture() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        return hours + ":" + (minutes < 10 ? "0" : "") + minutes;
+    }
+    
+    function isFlightDeparted() {
+        var now = new Date();
+        var hours = now.getHours();
+        
+        return hours >= parseInt(document.getElementById("timing").value);
+    }
+    
+    window.addEventListener('scroll', function() {
+        document.querySelector('header').classList.toggle('nav-scroll', window.scrollY > 0);
+    });
+</script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="web.html">Booking</a></li>
+                
+                
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="video-background">
+            <video autoplay muted loop>
+                <source src="C:\Users\Administrator\Videos\Captures\ISS Timelapse - ‎Double Half-Orbit (20 August 2023) - YouTube - Google Chrome 2024-04-23 12-59-06.mp4" type="video/mp4">
+                
+            </video>
+        </div>
+        <div class="container">
+            <form>
+                <label><input type="radio" name="flightType" id="known" onclick="onFlightTypeChange()">Flight Number known</label>
+                <label><input type="radio" name="flightType" id="unknown" onclick="onFlightTypeChange()">Flight Number unknown</label>
+                <div id="flightNumberLabel">
+                    <h2>Enter Flight Number</h2>
+                    <input type="text" id="flightNumber">
+                </div>
+                <div id="airlineLabel">
+                    <h2>Enter Airline</h2>
+                    <input type="text" id="airline">
+                </div>
+                <div id="fromCityLabel" style="display: none;">
+                    <h2>From City</h2>
+                    <input type="text" id="fromCity" value="Chennai">
+                </div>
+                <div id="toCityLabel" style="display: none;">
+                    <h2>To City</h2>
+                    <input type="text" id="toCity" value="Coimbatore">
+                </div>
+                <h2>Timing</h2>
+                <input type="text" id="timing">
+                <button type="button" onclick="searchFlight()">Search Status</button>
+            </form>
+        </div>
+        <div class="container result-container">
+            <h2 id="searchResult">The required flight status is</h2>
+            <hr>
+            <div class="flight-info">
+                <h2>Flight Status</h2>
+                <div class="flight-details">
+                    <div class="airline">
+                        <span class="label">Airline:</span>
+                        <span class="value" id="airlineValue"></span>
+                    </div>
+                    <div class="route">
+                        <span class="label">Route:</span>
+                        <span class="value" id="routeValue"></span>
+                    </div>
+                    <div class="flight-status">
+                        <span class="label">Departure Status:</span>
+                        <span class="status" id="departureStatus"></span>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="airports">
+                    <div class="departure-airport">
+                        <span class="label">Departure Airport:</span>
+                        <span class="value" id="departureAirportValue"></span>
+                    </div>
+                    <div class="arrival-airport">
+                        <span class="label">Arrival Airport:</span>
+                        <span class="value" id="arrivalAirportValue"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3, h4 {
+            color: #444;
+        }
+        .contact-form {
+            margin-top: 20px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .contact-form textarea {
+            resize: vertical;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #5cb85c;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #4cae4c;
+        }
+        .contact-form table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .contact-form table td {
+            padding: 10px;
+        }
+        .contact-form table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .contact-form table tr td:first-child {
+            text-align: right;
+            font-weight: bold;
+            width: 30%;
+        }
+        .social-links a {
+            display: inline-block;
+            margin-right: 10px;
+            text-decoration: none;
+            color: #007bff;
+        }
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you! Whether you have a question, feedback, or need assistance, please reach out to us through one of the methods below.</p>
+        
+        <h2>General Booking Inquiries</h2>
+        <p>Email: <a href="mailto:cb.sc.u4cse23023@cb.students.amrita.edu">cb.sc.u4cse23023@cb.students.amrita.edu</a></p>
+        <p>Email: <a href="mailto:cb.sc.u4cse23031@cb.students.amrita.edu">cb.sc.u4cse23031@cb.students.amrita.edu</a></p>
+        <p>Email: <a href="mailto:cb.sc.u4cse23034@cb.students.amrita.edu">cb.sc.u4cse23034@cb.students.amrita.edu</a></p>
+        <p>Phone: +91 9999888880</p>
+        <p>Hours: Monday - Friday, 9 AM - 6 PM</p>
+
+        <h2>Visit Us</h2>
+        <p>Amrita University, Amritanagar, Ettimadai, Tamil Nadu 641112</p>
+
+        <h2>Follow Us</h2>
+        <div class="social-links">
+            <a href="http://facebook.com/yourpage" target="_blank">Facebook</a>
+            <a href="http://twitter.com/yourhandle" target="_blank">Twitter</a>
+            <a href="http://linkedin.com/company/yourcompany" target="_blank">LinkedIn</a>
+            <a href="http://instagram.com/yourhandle" target="_blank">Instagram</a>
+        </div>
+
+        <h2>Contact Form</h2>
+        <div class="contact-form">
+            <form id="contactForm">
+                <table>
+                    <tr>
+                        <td><label for="name">Name:</label></td>
+                        <td><input type="text" id="name" name="name" placeholder="Your Name" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td><input type="email" id="email" name="email" placeholder="Your Email" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="issues">Issues Facing:</label></td>
+                        <td><textarea id="issues" name="issues" placeholder="Describe your issue" rows="4" required></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="feedback">Any Feedback:</label></td>
+                        <td><textarea id="feedback" name="feedback" placeholder="Your feedback" rows="4"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type="submit">Submit</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flight Booking Payment</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #bcdbbc;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        border: 1px solid #ccc;
+        display: flex;
+        max-width: 800px;
+        margin: 50px auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        background-color: #fff;
+        border-radius: 8px;
+        height: 400px; 
+        opacity: 0.8;
+    }
+    
+    .left {
+        width: 40%;
+        padding: 20px;
+        border-right: 1px solid #ccc;
+    }
+    
+    .right {
+        width: 60%;
+        padding: 20px;
+    }
+    
+    h2 {
+        margin-top: 0;
+        color: #333;
+    }
+    
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    li {
+        margin-bottom: 10px;
+    }
+    
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    input[type="text"] {
+        width: calc(100% - 16px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+    
+    input[type="text"]:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+    
+    .button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .button:hover {
+        background-color: #0056b3;
+    }
+    
+    .button:disabled {
+        background-color: #007bff;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="left">
+        <h2>Payment Options</h2>
+        <ul>
+            <li><a href="#" onclick="showDetails('netBanking')">Net Banking</a></li>
+            <li><a href="#" onclick="showDetails('upi')">UPI</a></li>
+            <li><a href="#" onclick="showDetails('emi')">EMI Payments</a></li>
+            <li><a href="#" onclick="showDetails('otherCards')">Other Cards</a></li>
+            <li><a href="#" onclick="showDetails('credits')">Credits</a></li>
+        </ul>
+    </div>
+    <div class="right" id="details">
+        
+    </div>
+</div>
+
+
+<center>
+    <button id="submitButton" class="button" onclick="ThankYouPage()">Submit Payment</button>
+</center>
+<script>
+    function ThankYouPage() {
+        window.location.href = "web6.html";
+    }
+    function showDetails(option) {
+    var details = document.getElementById('details');
+    if (option === 'netBanking') {
+        details.innerHTML = 
+            '<h2>Net Banking</h2>' +
+            '<input type="text" id="cardNumber" placeholder="Card Number" oninput="checkButton()">' +
+            '<input type="text" id="cvv" placeholder="CVV" oninput="checkButton()">' +
+            '<input type="text" id="expiryDate" placeholder="Expiry Date" oninput="checkButton()">';
+    } else if (option === 'upi') {
+        details.innerHTML = 
+            '<h2>UPI</h2>' +
+            '<input type="text" id="upiID" placeholder="UPI ID" oninput="checkButton()">';
+    } else if (option === 'emi') {
+        details.innerHTML = 
+            '<h2>EMI Payments</h2>' +
+            '<input type="text" id="cardNumber" placeholder="Card Number" oninput="checkButton()">' +
+            '<input type="text" id="cvv" placeholder="CVV" oninput="checkButton()">' +
+            '<input type="text" id="expiryDate" placeholder="Expiry Date" oninput="checkButton()">' +
+            '<input type="text" id="emiPlan" placeholder="EMI Plan" oninput="checkButton()">';
+    } else if (option === 'otherCards') {
+        details.innerHTML = 
+            '<h2>Other Cards</h2>' +
+            '<input type="text" id="cardNumber" placeholder="Card Number" oninput="checkButton()">' +
+            '<input type="text" id="cvv" placeholder="CVV" oninput="checkButton()">' +
+            '<input type="text" id="expiryDate" placeholder="Expiry Date" oninput="checkButton()">';
+    } else if (option === 'credits') {
+        details.innerHTML = 
+            '<h2>Credits</h2>' +
+            '<input type="text" id="availableCredits" placeholder="Available Credits" disabled>';
+    } else {
+        details.innerHTML = '';
+    }
+}
+
+    function checkButton() {
+        var button = document.getElementById('submitButton');
+        var inputs = document.querySelectorAll('#details input');
+        var valid = true;
+        inputs.forEach(function(input) {
+            if (!input.value) {
+                valid = false;
+            }
+        });
+        button.disabled = !valid;
+    }
+
+</script>
+
+</body>
+</html>
